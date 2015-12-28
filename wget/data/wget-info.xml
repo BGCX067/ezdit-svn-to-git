@@ -1,0 +1,7 @@
+<wget>
+	<info version='2.7.6' url='http://blog.got7.org/2009/06/wget_03.html#download' />
+	<changes>
+		<item>修正PCHome相簿名稱無法顯示的錯誤.</item>
+		<item>修正無名原圖下載的功能.</item>
+	</changes>
+</wget>

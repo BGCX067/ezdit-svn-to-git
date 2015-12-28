@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<Template name="Empty" image="project_templ_empty.png" mainScript="" interpreter="__TCLSH__">
+	<Namespace>::templEmpty</Namespace>
+	<Init>::templEmpty::init</Init>
+	<Description>Create an empty project.</Description>
+</Template>

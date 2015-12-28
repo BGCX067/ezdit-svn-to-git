@@ -1,0 +1,6 @@
+namespace eval ::templSVN::init {
+	::msgcat::mcset en_us "Can't fond svn command" "Can't fond svn command"
+	::msgcat::mcset en_us "error" "error"
+	::msgcat::mcset en_us "SVN Project" "SVN Project"
+	::msgcat::mcset en_us "Checkout project from SVN Repository." "Checkout project from SVN Repository."
+}

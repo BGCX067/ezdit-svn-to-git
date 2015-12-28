@@ -1,0 +1,85 @@
+namespace eval ::bframe {
+	::msgcat::mcset en_us "訊息" "訊息"
+}
+
+namespace eval ::fmeBrowse {
+	::msgcat::mcset en_us "分類 : " "分類 : "
+	::msgcat::mcset en_us "刪除分類" "刪除分類"
+	::msgcat::mcset en_us "刪除書籤" "刪除書籤"
+	::msgcat::mcset en_us "參觀 %s 的" "參觀 %s 的"
+	::msgcat::mcset en_us "增加" "增加"
+	::msgcat::mcset en_us "影音" "影音"
+	::msgcat::mcset en_us "查看相簿" "查看相簿"
+	::msgcat::mcset en_us "相簿" "相簿"
+	::msgcat::mcset en_us "確定要刪除這個項目嗎?" "確定要刪除這個項目嗎?"
+	::msgcat::mcset en_us "精選相簿" "精選相簿"
+	::msgcat::mcset en_us "網誌" "網誌"
+	::msgcat::mcset en_us "首頁" "首頁"
+}
+
+namespace eval ::lframe {
+	::msgcat::mcset en_us "我的最愛" "我的最愛"
+}
+
+namespace eval ::main {
+	::msgcat::mcset en_us "WGet (無名相簿下載程式)" "WGet (無名相簿下載程式)"
+	::msgcat::mcset en_us "在非商業行為的前題下您可以自由的使用本程式。在下載相片的同時也請尊重相片的肖像權。" "在非商業行為的前題下您可以自由的使用本程式。在下載相片的同時也請尊重相片的肖像權。"
+	::msgcat::mcset en_us "精選相簿" "精選相簿"
+}
+
+namespace eval ::mbar {
+	::msgcat::mcset en_us "  檔案  " "  檔案  "
+	::msgcat::mcset en_us "參觀WGet的網站" "參觀WGet的網站"
+	::msgcat::mcset en_us "參觀無名小站" "參觀無名小站"
+	::msgcat::mcset en_us "已經有新版本 %s 可下載" "已經有新版本 %s 可下載"
+	::msgcat::mcset en_us "您目前的版本是" "您目前的版本是"
+	::msgcat::mcset en_us "您目前的版本是 %s" "您目前的版本是 %s"
+	::msgcat::mcset en_us "檢查新版本" "檢查新版本"
+	::msgcat::mcset en_us "版本資訊" "版本資訊"
+	::msgcat::mcset en_us "目前已經是最新的版本" "目前已經是最新的版本"
+	::msgcat::mcset en_us "精選影音" "精選影音"
+	::msgcat::mcset en_us "精選相簿" "精選相簿"
+	::msgcat::mcset en_us "精選網誌" "精選網誌"
+	::msgcat::mcset en_us "資訊" "資訊"
+	::msgcat::mcset en_us "關於WGet..." "關於WGet..."
+	::msgcat::mcset en_us "離開" "離開"
+	::msgcat::mcset en_us "首頁" "首頁"
+}
+
+namespace eval ::output {
+	::msgcat::mcset en_us "Save" "Save"
+	::msgcat::mcset en_us "儲存輸出訊息..." "儲存輸出訊息..."
+	::msgcat::mcset en_us "清除" "清除"
+}
+
+namespace eval ::rframe {
+	::msgcat::mcset en_us "指定的標題已經存在或是不正確，請重新指定!!" "指定的標題已經存在或是不正確，請重新指定!!"
+	::msgcat::mcset en_us "錯誤" "錯誤"
+}
+
+namespace eval ::tbar {
+	::msgcat::mcset en_us "%s - WGet (無名相簿下載)" "%s - WGet (無名相簿下載)"
+	::msgcat::mcset en_us "%s 張相片" "%s 張相片"
+	::msgcat::mcset en_us "ok%s" "ok%s"
+	::msgcat::mcset en_us "下載時包含影音" "下載時包含影音"
+	::msgcat::mcset en_us "人氣相簿" "人氣相簿"
+	::msgcat::mcset en_us "人氣相簿 Top %s 完成%s" "人氣相簿 Top %s 完成%s"
+	::msgcat::mcset en_us "儲存位置" "儲存位置"
+	::msgcat::mcset en_us "儲存位置：" "儲存位置："
+	::msgcat::mcset en_us "全部" "全部"
+	::msgcat::mcset en_us "失敗%s" "失敗%s"
+	::msgcat::mcset en_us "帳號:" "帳號:"
+	::msgcat::mcset en_us "成功%s" "成功%s"
+	::msgcat::mcset en_us "找到 %s 本相簿...結束%s" "找到 %s 本相簿...結束%s"
+	::msgcat::mcset en_us "查看相簿" "查看相簿"
+	::msgcat::mcset en_us "正在找出人氣相簿清單...%s" "正在找出人氣相簿清單...%s"
+	::msgcat::mcset en_us "正在找出精選相簿清單...%s" "正在找出精選相簿清單...%s"
+	::msgcat::mcset en_us "照片" "照片"
+	::msgcat::mcset en_us "精選相簿" "精選相簿"
+	::msgcat::mcset en_us "精選相簿 Top %s 完成%s" "精選相簿 Top %s 完成%s"
+	::msgcat::mcset en_us "首頁相簿" "首頁相簿"
+}
+
+namespace eval ::test {
+}
+

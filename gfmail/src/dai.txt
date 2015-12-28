@@ -1,0 +1,5 @@
+Thanks to use GFMail.
+   Version: $::dApp::Priv(version)
+   Author : $::dApp::Priv(author)
+   E-Mail : $::dApp::Priv(email)
+   Web site : $::dApp::Priv(host)

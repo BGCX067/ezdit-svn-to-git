@@ -1,0 +1,4 @@
+en_us:English
+de_de:German
+it_it:Italiano 
+zh_tw:Traditional Chinese (Taiwan)

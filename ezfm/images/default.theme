@@ -1,0 +1,40 @@
+__unknow__ 		= $imagePath/__unknow__.png
+
+toolbar.btnPrev 	= $imagePath/16x16/go-previous.png
+toolbar.btnNext 	= $imagePath/16x16/go-next.png
+toolbar.btnHome 	= $imagePath/16x16/go-home.png
+toolbar.btnUp   	= $imagePath/16x16/go-up.png
+toolbar.btnRefresh 	= $imagePath/16x16/view-refresh.png
+toolbar.btnSearch 	= $imagePath/16x16/system-search.png
+
+tree.directory		= $imagePath/48x48/folder.png
+tree.directory.mark	= $imagePath/48x48/folder.png
+tree.hidden_directory	= $imagePath/48x48/folder.png
+tree.hidden_directory.mark	= $imagePath/48x48/folder.png
+tree.fixed		= $imagePath/48x48/gnome-dev-harddisk.png
+tree.fixed.mark		= $imagePath/48x48/gnome-dev-harddisk.png
+tree.cdrom		= $imagePath/48x48/gnome-dev-cdrom.png
+tree.cdrom.mark		= $imagePath/48x48/gnome-dev-cdrom.png
+tree.home		= $imagePath/48x48/user-home.png
+tree.home.mark		= $imagePath/48x48/user-home.png
+tree.file		= $imagePath/48x48/image-x-generic.png
+tree.file.mark		= $imagePath/48x48/image-x-generic.png
+tree.hidden_file		= $imagePath/48x48/image-x-generic.png
+tree.hidden_file.mark		= $imagePath/48x48/image-x-generic.png
+tree.removable		= $imagePath/48x48/gnome-dev-harddisk.png
+tree.removable.mark		= $imagePath/48x48/gnome-dev-harddisk.png
+tree.progress			= $imagePath/__unknow__.png
+
+lframe.home			= $imagePath/24x24/user-home.png
+lframe.home.mark			= $imagePath/24x24/user-home.png
+lframe.fixed			= $imagePath/24x24/gnome-dev-removable.png
+lframe.fixed.mark			= $imagePath/24x24/gnome-dev-removable.png
+lframe.cdrom			= $imagePath/24x24/gnome-dev-cdrom.png
+lframe.cdrom.mark			= $imagePath/24x24/gnome-dev-cdrom.png
+lframe.desktop			= $imagePath/24x24/user-desktop.png
+lframe.desktop.mark			= $imagePath/24x24/user-desktop.png
+lframe.removable		= $imagePath/48x48/gnome-dev-harddisk.png
+lframe.removable.mark		= $imagePath/48x48/gnome-dev-harddisk.png
+lframe.bookmark = $imagePath/__unknow__.png
+lframe.bookmark.mark = $imagePath/__unknow__.png
+

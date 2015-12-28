@@ -1,0 +1,9 @@
+Package Thread 2.6.3
+Meta category    Threading
+Meta description Thread provides commands for the creation and
+Meta description manipulation of script-level threads and communication
+Meta description between them
+Meta platform    linux-glibc2.2-ix86
+Meta require     {Tcl -version 8.4}
+Meta subject     threads interprocess-communication IPC send
+Meta summary     Thread support at script level

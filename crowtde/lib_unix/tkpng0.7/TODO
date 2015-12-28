@@ -1,0 +1,10 @@
+=== Features ===
+
+	- Add encoding support (FileWriteProc/StringWriteProc).
+
+=== Testing ===
+
+	- Rewrite and extend tests.
+		- Extend tcllib::png?
+	- Check interlacing support at width and height 10..64
+

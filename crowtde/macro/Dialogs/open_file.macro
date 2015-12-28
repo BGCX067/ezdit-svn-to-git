@@ -1,0 +1,4 @@
+#Open File
+set ret [tk_getOpenFile -filetypes [list [list "ALL" "*.*"] ] -title [::msgcat::mc "Open File"]]
+if {$ret eq "" || $ret eq "-1"} {return}
+

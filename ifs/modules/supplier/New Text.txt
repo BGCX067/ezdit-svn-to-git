@@ -1,0 +1,72 @@
+########基本資料#########
+廠商代號 : id                   負責人: principal
+廠商名稱 : name
+統一編號 : business_no
+聯絡電話1: tel1
+聯絡電話2: tel2
+傳真號碼1: fax1
+傳真號碼2: fax2
+公司地址 : company_addr
+發票地址 : invoice_addr
+其它地址 : other_addr
+E-Mail : email
+
+########聯絡人#########
+聯絡人 : contact_person
+職稱 : contact_position
+電話 : contact_tel
+手機 : contact_cellphone
+E-Mail : contact_email
+
+########其它資料#########
+國家: country
+貨幣 : currency
+信用額度: credit_lines
+付款方式: payment
+關係: rank
+營業項目 : business_item
+備註: note
+
+
+=========Supplier 供應商表格=========
+廠商代號 : Supplier ID :   id
+廠商名稱 : Supplier Name :  name
+負責人: Person in Charge : principal
+統一編號 : Unified Business No. business_no 
+國家: Country : country
+貨幣 : Currency : currency
+公司地址 : (區號) Company addr. (Post Code) company_addr
+發票地址 : (區號) Invoice Addr. invoice_addr
+地址 1. (區號) Other Addr 1. other_addr1
+地址 1. (區號) Other Addr 2. other_addr2
+地址 1. (區號) Other Addr 3. other_addr3
+電話 : Company Tel.  company_tel.
+電話1.  other_tel1.
+電話2. other_tel2.
+電話3. other_tel3.
+傳真 : FAX  company_fax
+傳真 1: other_fax1
+E-Mail : email
+付款方式: (貨到/月結) 0天的期票 (結帳日) Type of Payment:
+to pay on delivery  , monthly  ,day of reckoning
+信用額度: credit lines
+關係: 1~5☆ : Rank
+建檔日期: Create Time.
+營業項目 :  Item of Business :
+備註: Note
+
+聯絡人: Contact Person
+電話: Tel.
+手機: Cellphone
+email:
+備註:
+
+
+purchase 進貨
+sales 銷貨
+supplier 供應商
+uniform invoice 發票
+unit 單位
+
+
+

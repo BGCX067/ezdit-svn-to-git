@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ttrc>
+    <Notes>
+        <N1239898398 state="FINISHED" description="v0.6 : pmgr新增專案時，需要先處理樣版的初始化程式，目前還沒有處理。"/>
+        <N1254417735 state="FINISHED" description="v0.8 : 如果在編輯程式中發生任何和Tab鍵有關的錯誤，記得去查看 tteditor::event_key_press ,tteditor::event_key_release"/>
+        <N1254455009 state="FINISHED" description="v0.8 : 在cbrowser加入hook"/>
+        <N1254455070 state="FINISHED" description="v0.8 : 編輯器跳出參數提示時，不能用上/下鍵切入 提示視窗的的問題"/>
+        <N1254548101 state="FINISHED" description="v0.8 : 加入設定UI字型的功能吧!! &gt; &lt;&quot;"/>
+        <N1254558307 state="FINISHED" description="v0.8 : 把tcltk模組syndb裡的ez_chooseFont,ez_chooseImage,ez_chooseCursor加上去吧"/>
+        <N1254581713 state="FINISHED" description="v0.8 : I can open project or file in tkcon by 'ez' command"/>
+        <N1254635857 state="FINISHED" description="v0.8 : I support function to adjust fonts of UI"/>
+        <N1254635935 state="FINISHED" description="v0.8 : I can use &quot;Tab&quot; to indent text in editor"/>
+        <N1254805203 state="FINISHED" description="v0.8.1 : 程式關掉時記住目前文件的游標位置"/>
+        <N1254805258 state="FINISHED" description="v0.8.3 : 程式關掉時記住下方頁籤的目前位置"/>
+        <N1254805307 state="NOT_STARTED" description="程式關掉時記住pmgr中展開的項目"/>
+        <N1254805356 state="NOT_STARTED" description="右上角的search box記住搜尋過的項目"/>
+        <N1254805984 state="NOT_STARTED" description="加入切換圖示集的機制"/>
+        <N1254811929 state="FINISHED" description="v0.8.1 : 在檔案中尋找 現在可以用 多個 filter  ex *.tcl *.c *.h"/>
+        <N1254816304 state="FINISHED" description="v0.8.3 : 在查看更新那邊加入一個'啟動時檢查更新'的功能"/>
+        <N1254816412 state="FINISHED" description="v0.8.3 : 在備忘錄的title加入一個add的按鈕"/>
+        <N1255500544 state="FINISHED" description="v0.8.3 : 改善了Find in files 的功能"/>
+        <N1255596470 state="FINISHED" description="v0.8.4 : 加入調整Menu字型的功能"/>
+        <N1255596494 state="FINISHED" description="v0.8.3 : 執行外部程式時 會自動切到TkCon"/>
+        <N1255622569 state="FINISHED" description="v0.8.4 : 加入全螢幕的功能(註解中....)"/>
+        <N1255674593 state="FINISHED" description="v0.8.4 : 加入jump to matching brace的功能"/>
+        <N1255674612 state="FINISHED" description="v0.8.4 : 加入select to matching brace的功能"/>
+        <N1255677233 state="FINISHED" description="v0.8.4 : 修正panewin移到上方的錯誤"/>
+        <N1255707500 state="FINISHED" description="v0.8.4 : 在檔案總管用ezdit開啟檔案時會開在已經開啟的ezdit"/>
+        <N1255707560 state="FINISHED" description="v0.8.4 : 在檔案總管可以拉檔案或資料夾到pmgr"/>
+        <N1255768165 state="FINISHED" description="v0.8.4 : 修正了“關閉全部” 選不要儲存時 只會關把清單中選取項目的問題"/>
+        <N1255769754 state="FINISHED" description="v0.8.4 : 修改了MARK不會跟著移動的問題"/>
+        <N1255770953 state="FINISHED" description="v0.8.4 : 修好了Control-y複製一行的問題"/>
+        <N1256114222 state="FINISHED" description="v0.8.4 : 加入了行操作的功能"/>
+        <N1256114316 state="FINISHED" description="v0.8.4 : 在toolbar加上了goto line的按鈕"/>
+    </Notes>
+</ttrc>
+

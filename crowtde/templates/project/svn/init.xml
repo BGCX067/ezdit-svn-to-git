@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<Template name="SVN Project" image="project_templ_svn.png" mainScript="" interpreter="__TCLSH__">
+	<Namespace>::templSVN</Namespace>
+	<Init>::templSVN::init</Init>
+	<Description>Checkout project from SVN Repository.</Description>
+</Template>

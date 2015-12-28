@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.78 [en] (X11; U; Linux 2.4.7-10 i686) [Netscape]"><title>Overview of the Tkprint 1.</title></head><body bgcolor="#ffffff">
+
+<h1>
+<b><font face="Verdana"><font color="#000000"><font size="-1">Overview of
+the Tkprint 1.1 package</font></font></font></b></h1>
+
+<p><br><font face="Verdana"><font color="#000000"><font size="-1">This extension
+package is for use with stubs aware binary releases of Tcl/Tk 8.1 and later
+that run under the Windows operating systems. The extension implements
+native mode printing of canvas and text widgets as well as the capture
+of widgets from the screen to files in Windows .BMP format.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">This package
+enhances the original Tkprint 1.0 package by adding some basic pagination
+capabilities, enabling the use of user specified fonts for the printing
+of text widgets, and the capture of widgets displayed under Tcl/Tk using
+the widget path to identify the window.</font></font></font>
+</p><h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">The Tkprint
+1.17 Update Releas</font></font></font></b><font face="Verdana"><font color="#000000"><font size="-1">e</font></font></font></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This release corrects
+some problems with the display of the contents of the Tk text widget using
+the Print command. The update also adds some enhancements that provide
+for limited formatting of the header and footers that are optionally placed
+on pages printed by this extension.</font></font></font>
+<h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">The TkPrint
+1.16 Update Release</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This release provides
+support for tab characters embedded in text widgets. Tabs are optionally
+expanded to a series of blanks according to the value specified with the
+-tabwidth option (see below).</font></font></font>
+<h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">The Tkprint
+1.1.5 Update Release</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This release implements
+support for the capture and printing of canvas widgets as Windows Enhanced
+format metafiles. This release enables the capture of a canvas in metafile
+format directly to the Windows clipboard or to a disk file. Windows metafiles
+can be pasted directly into other applications, such as word processors,
+providing better quality images than are available through the use of bitmap
+based image capture.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">This release
+also adds improved management of color space reduction for image capture
+and printing. Whereas previous releases relied on the Windows device drivers
+for color space reduction when printing or capturing of widgets, this release
+implements error diffusion based dithering against "standard' palettes,
+resulting in considerably improved color matching.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">Clipboard support
+has also been added to the <a href="#Capture">Capture</a> command, so that
+widgets may be captured directly to the clipboard in Windows DIB format,
+optionally at reduced color space resolutions. Again, captured DIB format
+images can then be pasted directly into other applications.</font></font></font>
+</p><h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">The Tkprint
+1.1.4 Update Release</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This release corrects
+a problem for Windows NT 4 users caused by the lack of the winspool.dll
+file on their machines. This dll is present on Windows 9x machines, but,
+apparently, is not available on at least some NT 4 SP5 machines. This cause
+the package loader to fail with an error message that the tkprt11x.dll
+could not be found.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">This release
+also adds a check to the print command that the widget path name passed
+is in fact a text. If this command is used for a non text widget it will
+return an error message.</font></font></font>
+</p><h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">Tkprint 1.1.3
+Update Release</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This update fixes
+a problem associated with the Tcl/Tk 8.3.0 release caused by a failure
+of the earlier package to check for the use of the object command format
+for canvas items. This error cause the package to abort Wish when an attempt
+is made to print a canvas widget.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">The code that
+handles the printing of text widgets has been modified to support UTF-8
+character encoding. This enables the printing of characters used by various
+european languages that are usually outside the ASCII-96 character set.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">A new option
+is added to the <a href="#PrintCanvas">PrintCanvas</a> command, providing
+the ability to scale the output on the printer page.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">A new command,
+<a href="#PrinterCapabilities">PrinterCapabilities</a>, has been added
+to the package to allow users to determine whether a printer will likely
+print screen images.</font></font></font>
+</p><h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">Installation</font></font></font></b></h2>
+<font face="Verdana"><font size="-1"><a href="http://pages.videotron.com/cclients/files/tkprt117.zip">Download the
+Tkprint 1.1</a><font color="#000000"> archive into your $tcl_library directory.
+Unpack the archive with a utility that will preserve the embedded directory
+structure (Such as unzip.exe). This will create a sub-directory named tkprint1.1
+which contains the extension .dll file, a pkgIndex.tcl file and some support
+files.</font></font></font>
+<h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">Using the Tkprint
+1.1 Extension</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">The extension
+can be loaded using the following command...</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+package require Tkprint 1.1</font></font></font>
+</p><p><font face="Verdana"><font size="-1"><font color="#000000">It will make
+available the commands "</font><a href="#PrintCanvas">PrintCanvas</a><font color="#000000">","</font><a href="#Print">Print</a><font color="#000000">","</font><a href="#Capture">Capture</a><font color="#000000">"
+,"<a href="#PrinterCapabilities">PrinterCapabilities</a>","</font><a href="#MetaFile">MetaFile</a><font color="#000000">",
+"</font><a href="#PrintMetaFile">PrintMetafile</a><font color="#000000">"
+and "</font><a href="#PrintWindow">PrintWindow</a><font color="#000000">",
+as well as loading the script file "</font><a href="#Scripts">window.tcl</a><font color="#000000">"
+which comes with the distribution. The "window.tcl" file shows how to implement
+the script based capture of widgets. Note that because the "PrintWindow"
+function has to ask you for a printer, you can not implement operator free
+printing of widgets. You can, however, implement operator free capture
+of widgets to image files.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">The distribution
+provides a file named "console.tcl". This is a modified version of the
+standard "console.tcl" file that comes with the Tcl/Tk distribution. Its
+menus are enhanced to add a "Print" and a "Capture" command that allow
+the printing of the contents of the interactive console text widget, or
+its capture as an image file. If you want to use this version of the console
+just copy it into the $tk_library directory. Its wise to backup the original
+version before you do the copy. Note that this version of the "console.tcl"
+file can also make use of the <b>Help</b> extension found on this site.</font></font></font>
+</p><h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">Licence</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">Free for non-commercial
+use. Redistribution permitted. Resale prohibited.</font></font></font>
+<h2>
+<b><font face="Verdana"><font color="#000000"><font size="-1">Warranty</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">None. Use at your
+own risk. This software is provided as is, without any warranty of any
+kind.</font></font></font>
+<br>
+<hr>
+<h1>
+<a name="CommandReference"></a><font face="Verdana"><font color="#000000"><font size="-1">Command
+Reference</font></font></font></h1>
+
+<h2>
+<a name="GenericOptions"></a><b><font face="Verdana"><font color="#000000"><font size="-1">Generic
+Options</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">The general form
+of the commands provided by this package is as follows...</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">command path
+?-file? ?file? ?-title? ?title? ?-font? ?font? ?-margins? ?margins? ?-paginate?
+?boolean? ?-position? ?position? ?-scale? ?scale? ?-pagefont? ?pagefont?
+?-clipboard? ?boolean? ?-header? ?header? ?-footer? ?footer?</font></font></font>
+</p><p><font face="Verdana"><font size="-1"><font color="#000000">where the <i>command</i>
+is one of the supported commands (</font><a href="#CommandReference">see
+below</a><font color="#000000">) and <i>path</i> is the path name of the
+widget to be used. All of the commands require a <i>path</i>. The <i>file</i>
+option is needed for capture operations, and is mandatory for the Capture
+command. The
+<i>title</i> option is useful where a printout is the result
+of the command. The remaining options are supported by specific commands
+where it makes sense to do so.</font></font></font>
+</p><h2>
+<font face="Verdana"><font color="#000000"><font size="-1">-paginate</font></font></font></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">For commands that
+result in a printed page, the <i>paginate</i> option can be used to toggle
+the printing of a page header that contains a title, a date stamp and a
+page number. If <i>paginate</i> is <i>false</i> then no pagination will
+be done, and any value for <i>title</i> is ignored. By default, <i>paginate</i>
+is <i>true.</i></font></font></font>
+<h3>
+<font face="Verdana"><font color="#000000"><font size="-1">-margins</font></font></font></h3>
+<font face="Verdana"><font color="#000000"><font size="-1">The <i>margins</i>
+option allows specification of the page margins used when printing things.
+The margins are set, by default, to 1.0,1.0,1.0 and 0.5 (all inches) representing
+the left,top,right and bottom margins with respect to the printer's printable
+page surface. Note that many printers have margin settings specified in
+the printer driver dialog that can affect the printable area on a page.
+The <i>margins</i> option acts on whatever printable page area the device
+driver indicates is available.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">The format
+of the margin specification is...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">... -margins
+left,top,right,bottom ...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where the values
+are in inches.</font></font></font>
+</p><h3>
+<font face="Verdana"><font color="#000000"><font size="-1">-position</font></font></font></h3>
+<font face="Verdana"><font color="#000000"><font size="-1">The <i>position</i>
+option allows specification of the location and size of the printed image
+produced by the PrintWindow command. Normally, the position and size default
+to the top of the page (possibly after any pagination output) with a width
+equal to the page width less the margins, and a height scaled to preserve
+the aspect of the widget. By specifying the <i>position</i> option you
+can define the location and size of the printed widget.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">The format
+of the position specification is...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">... -position
+left,top,right,bottom ...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>left</i>,<i>top</i>,<i>right</i>
+and <i>bottom</i> are values in inches that describe the rectangle to be
+occupied by the printed widget. These coordinates are relative to an origin
+that is in the top left corner of the page region defined by the printable
+page size deflated by the margins and any pagination output.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">Have care in
+using the <i>position</i> option, as it is easy to destroy the printed
+output to the extent that the printout is unrecognizable. The PrintWindow
+function uses the StretchDIBits Windows function, which works well for
+aspect preserving expansions and contractions of moderate scale factor,
+but can produce a mess if not controlled carefully.</font></font></font>
+</p><h3>
+<font face="Verdana"><font color="#000000"><font size="-1">-scale</font></font></font></h3>
+<font face="Verdana"><font color="#000000"><font size="-1">The format of
+the <i>scale</i> specification is...</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">... -scale
+horizontal,vertical</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>horizontal</i>
+and <i>vertica</i>l are floating point numbers that can be used to scale
+the output on the printed page. By default, both of these values are 1.0.
+The current version of the extension tries to preserve the aspect ratio
+of the canvas objects, so usually, only the <i>horizontal</i> scale value
+need be supplied. Because the resolution of the printer will be, in general,
+higher than that of the display on which the canvas is drawn, then the
+printed canvas contents will be physically smaller than they are on the
+display. By choosing an appropriate scale factor, users can achieve a printed
+output that matches the screen, or some other size.</font></font></font>
+</p><h3>
+<font face="Verdana"><font color="#000000"><font size="-1">-font</font></font></font></h3>
+<font face="Verdana"><font color="#000000"><font size="-1">The <i>font</i>
+specification is used to supply a font for the header and footer that is
+printed on pages that use <i>pagination. </i>See the <i>Print</i> command
+below for a description of how to specify a font.</font></font></font>
+<h3>
+<font face="Verdana"><font color="#000000"><font size="-1">-clipboard</font></font></font></h3>
+<font face="Verdana"><font color="#000000"><font size="-1">The <i>clipboard</i>
+option can be used with the <i>Capture</i> and <i>MetaFile</i> commands
+to place copies of widget windows on the clipboard. The format of the <i>clipboard</i>
+option is as follows:</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">... -clipboard
+boolean</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>boolean</i>
+indicates that the image or metafile is to be written to the clipboard
+if its value is "true", "yes" or "1". By default, images or metafiles are
+not written to the clipboard.</font></font></font>
+</p><h3>
+<font face="Verdana"><font color="#000000"><font size="-1">-header and -footer</font></font></font></h3>
+<font face="Verdana"><font color="#000000"><font size="-1">The <i>header</i>
+and <i>footer</i> options can be used to format the page header and page
+footer that is printed when pagination is being used. The <i>header</i>
+and <i>footer</i> values are text strings that can include embedded format
+specifiers from the following list:</font></font></font>
+<ul>
+<li>
+<font face="Verdana"><font color="#000000"><font size="-1">%d&nbsp;&nbsp;&nbsp;
+The date/time of the printout</font></font></font></li>
+
+<li>
+<font face="Verdana"><font color="#000000"><font size="-1">%t&nbsp;&nbsp;&nbsp;
+The current title string</font></font></font></li>
+
+<li>
+<font face="Verdana"><font color="#000000"><font size="-1">%n&nbsp;&nbsp;&nbsp;
+The value of the next page number</font></font></font></li>
+
+<li>
+<font face="Verdana"><font color="#000000"><font size="-1">%p&nbsp;&nbsp;&nbsp;
+The value of the current page number</font></font></font></li>
+</ul>
+<font face="Verdana"><font color="#000000"><font size="-1">You can also specify
+%% to get a single % sign, and %<i>number</i>, where <i>number</i> is a
+string of digits, to specify the number of blanks to be inserted. There
+are a few caveats. The maximum number of characters in a <i>header</i>
+or <i>footer</i> is 254. If you overflow this number the strings will be
+truncated. The simple string expander needs to see the % escape as the
+first character following a blank (ASCII 32) or tab or newline character.
+Here is an example of a header format specification:</font></font></font><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+Print .text -title "My Example" -header "%t printed %d"</font></font></font><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">which results
+in the page header being something like:</font></font></font><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+"My Example printed Tue Sep 2001 12:32:00 2002"</font></font></font><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">Note that text
+tokens that are not preceded by a % escape appear as they are. If paginate
+is true and there is no header or footer specified on the command line,
+the default formats are used.</font></font></font>
+</p><h2>
+<a name="PrintCanvas"></a><b><font face="Verdana"><font color="#000000"><font size="-1">PrintCanvas</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This command will
+print the contents of a canvas widget on a Windows printer. If necessary,
+the canvas contents will be printed on multiple, paginated pages. The format
+of the command is</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+PrintCanvas path ?-title? ?title?</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>path</i>
+is the path name of the widget. If the <i>title</i> option is specified,
+the <i>title</i> string will appear on the printed page of the output.
+The command will prompt the user for the Windows printer to be used.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">This command
+does the job of printing the canvas, but does not perform any scaling of
+the output. Since current generation printers have generally much larger
+pixel resolutions than do display screens, printed canvases will look rather
+small on the printout when compared to the screen. If you use this function
+on a really high resolution printer, the output may be of little use for
+purposes other than debugging.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">If this command
+is successful, the value returned is the path name of the canvas window
+that has been printed.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">If the user
+cancels the printing, or if there is an error in the command line, an error
+message is returned.</font></font></font>
+</p><h2>
+<a name="Print"></a><b><font face="Verdana"><font color="#000000"><font size="-1">Print</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This command will
+print the contents of a text widget on a Windows printer. The printed output
+will not show any embedded windows of the text, just the actual character
+strings in the text. The output will be paginated as necessary.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">The format
+of the command is...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+Print path ?-title? ?title? ?-font? ?font? ?-pagefont? ?pagefont?&nbsp;&nbsp;
+?-tabwidth? ?width?</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>path</i>
+is the path name of the widget, <i>title</i> is an optional title for the
+printed pages, and <i>pagefont</i> is the name of the font to be used.
+The <i>font</i> is a font that is used to print the page headers and footers.</font></font></font><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><b><font face="Verdana"><font color="#000000"><font size="-1">-title</font></font></font></b><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">If <i>title</i>
+is specified, the pages of printed text will use this string as a title.
+If <i>font</i> is not specified, the command will print the output using
+the font retrieved from the text widget via the "cget -font" widget command.</font></font></font><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><b><font face="Verdana"><font color="#000000"><font size="-1">-font and
+-pagefont</font></font></font></b>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">If <i>font
+</i>or
+<i>pagefont </i>is specified, the general format of the font specification
+string is as follows...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">facename size
+?bold? ?normal? ?light? ?italic? ?underline? ?strikeout?</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>facename</i>
+should be the name of a font that is installed on the computer being used
+and <i>size</i> is a number representing the desired size of the characters
+to be printed. The remaining keywords are optional, and can be used to
+change the appearance of the printed output. The default is font is "Terminal
+12 normal", a font that is more or less certain to exist on Windows machines.</font></font></font><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">Note that the
+use of fonts is problematic on windows machines in that different printers
+have different resolutions, resulting in a font specification appearing
+somewhat different on each machine. What has been done in this extension
+is to scale the actual font size specification according to the ratio of
+the current printer resolution to the standard display resolution of 72
+pixels per inch. This causes the printed output to resemble the contents
+of a typical 17 inch monitor running in 1024 by 768 mode. If you don't
+want this font size, you will have to fool with the font specification
+using the command line.</font></font></font><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">Previous to
+1.17, Tkprint used whatever was specified either in the Tk text or the
+command line, and the result was so small as to be unreadable on high resolution
+printers. The new scheme is good for the lazy, but not necessarily for
+the pure.</font></font></font>
+</p><p><b><font face="Verdana"><font color="#000000"><font size="-1">-tabwidth</font></font></font></b><font face="Verdana"><font color="#000000"><font size="-1"></font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">If <i>tabwidth</i>
+is specified, it is followed by a number indicating the number of space
+characters that a full tab should expand to. The value is used to specify
+the interval of tab positions across a page, so the actual tab expansion
+will bring the print head to the next tab position by padding the output
+line with blanks. The default value of the <i>tabwidth</i> is 8. Setting
+<i>tabwidth</i> to 0 will turn off tab expansion, and the tab character
+will be printed as the graphic symbol appropriate to the selected font.</font></font></font>
+</p><h2>
+<a name="Capture"></a><b><font face="Verdana"><font color="#000000"><font size="-1">Capture</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This command will
+grab a displayed widget and map it to a 256 color Device Independent Bitmap
+(DIB) format file. It is important to ensure that the widget being captured
+is on the top of the display (that is, not overlapped by other windows),
+and is fully updated (that is, completely displayed) when capture occurs.
+Otherwise, you will capture whatever is in the window rectangle of the
+widget.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">The format
+of the command is...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+Capture path -file file</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>path</i>
+is the path to the widget and <i>file</i> is the required name of the file
+to be used for the image. This command saves 256 color bitmaps regardless
+of the nature of the actual display. The reason for this is that while
+24 bit displays are common and are universally well handled, 16 bit displays
+are also common, and the bitmaps generated are not universally well handled.
+I have never come across any software that does a bad job of indexed BMP
+files, and they are easy to convert to GIF format for all the UNIX fans
+out there.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">While the Capture
+command actually does the work, see the "GrabWindow" command below for
+a solution to some implementation issues.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">If this command
+is successful, the name of the file containing the captured window is returned.</font></font></font>
+</p><h2>
+<a name="PrintWindow"></a><b><font face="Verdana"><font color="#000000"><font size="-1">PrintWindow</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This command captures
+a widget and prints it on a printer page. In order to use this command,
+your printer driver needs to support the StretchDIBits GDI command. Unless
+you are using a printer driver that dates from before 1986 or so, or, like
+me, you use one you wrote yourself, you should not have any worry on this
+point.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">The format
+of the command is...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+PrintWindow path ?-title? ?title?</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>path</i>
+is the path name of the widget and <i>title</i> is an optional title for
+the printed page. This command works the same way as the Capture command
+does, so you need to be sure that the widget to be printed is on top of
+other widgets and fully displayed on the screen.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">The printed
+output will have the widget stretched to the page width of the printer,
+but the aspect ratio of the printed widget will be preserved, so it will
+look like the one on the screen.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">While the PrintWindow
+command actually does the work, see the "PrintAWindow" command below for
+a solution to certain implementation issues.</font></font></font>
+</p><h2>
+<a name="PrinterCapabilities"></a><font face="Verdana"><font color="#000000"><font size="-1">PrinterCapabilities</font></font></font></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This command will
+present a printer selection dialog asking the user to choose the printer
+that is of interest. The result of the command will be a message that displays
+the color capabilities of the printer, and optionally, the color parameters
+of a Tk window on the display screen.</font></font></font>
+<p><font face="Verdana"><font size="-1"><font color="#000000">This command
+may be useful where attempts to use the </font><a href="#PrintWindow">PrintWindow</a><font color="#000000">
+command fail because there is a mismatch between color capabilities of
+the printer driver for a printer and the color parameters of a window being
+printed. Not all printer drivers support the printing of images in all
+color formats. By default, the </font><a href="#PrintWindow">PrintWindow</a><font color="#000000">
+command will set the color depth of the captured screen image to the color
+depth reported by the printer driver. The user, may, by using the "-colordepth"
+option of the PrintWindow command specify an alternate color depth which
+the printer may support.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">The format
+of the command is ...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+PrinterCapabilities ?path?</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where<i> path</i>
+is an optional Tk window path to a window on the screen. If <i>path</i>
+is not specified, the result of this command is a text string that contains
+the color capabilities of the selected printer. If a <i>path</i> is supplied,
+then the color parameters of the screen image in the associated Tk window
+is also displayed.</font></font></font>
+</p><h2>
+<a name="MetaFile"></a><b><font face="Verdana"><font color="#000000"><font size="-1">Metafile</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This command will
+create various types of Windows metafiles from canvas widgets. The distribution
+contains a document that describes the various available options and contains
+some examples of captured widgets in both metafile and bitmap format.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">The format
+of the command is:</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+MetaFile path ?-file? ?name? ?-clipboard? ?boolean? ?-format? ?format?
+...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where the <i>path</i>
+is the Tk path name to the canvas widget to be used to create the metafile.
+If neither the <i>file</i> nor the <i>clipboard</i> options are specified,
+then the metafile will be generated and printed to a native Windows printer.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">The <i>file</i>
+and <i>clipboard</i> options are mutually exclusive. If a file name is
+specified, then the target Windows metafile format is determined from the
+file extension. Extensions of .WMF result in a traditional format windows
+metafile, marginally useful for Windows 3.1 applications. The default format
+is .EMF, or the Windows Enhanced Metafile format. This format is good for
+Win 9x, NT and 2000 applications.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">If the <i>clipboard</i>
+option is used, the metafile will be put onto the Windows clipboard in
+the requested format. Not all applications will support all metafile formats.
+Microsoft Office 9x and Lotus SmartSuite will accept the pasting and resizing
+of Enhanced format metafiles from the clipboard.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">The <i>format</i>
+option can be "enhanced", "aldus" or "windows". The default format is "enhanced".
+There may be some applications that can use "aldus", which will generate
+Aldus Placeable Metafile format.</font></font></font>
+</p><h2>
+<a name="PrintMetaFile"></a><b><font face="Verdana"><font color="#000000"><font size="-1">PrintMetaFile</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">This is a utility
+that will print Windows metafile formats to a native windows printer. The
+format of the command is:</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+PrintMetafile name ...options...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>name</i>
+is the name of the Windows metafile to be printed. You can use any of the
+page formatting options to add headers, footers or set margins. The format
+of the Windows metafile is determined from the file name extension. Traditional
+Windows metafiles have the extension .WMF, new style files have the extension
+.EMF</font></font></font>
+</p><h2>
+<a name="Scripts"></a><b><font face="Verdana"><font color="#000000"><font size="-1">GrabWindow
+and PrintAWindow</font></font></font></b></h2>
+<font face="Verdana"><font color="#000000"><font size="-1">These commands
+are implemented via the script file "windows.tcl" that comes with the package.
+There purpose is to pop a widget to the top of a display stack, allow some
+time for the Windows O/S to redraw the widget. There are many possible
+ways of ensuring that the widget to be captured or printed is topmost and
+fully updated, so do your own by changing the scripts if you don't like
+the way it works now.</font></font></font>
+<p><font face="Verdana"><font color="#000000"><font size="-1">These commands
+put the widget topmost by iconifying it, then deiconifying it. Then, after
+a delay of 1/2 a second, time enough for the window to be redrawn completely,
+the appropriate command is executed.</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">The command
+formats are...</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+GrabWindow path ?file?</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">&nbsp;&nbsp;&nbsp;
+PrintAWindow path ?title?</font></font></font>
+</p><p><font face="Verdana"><font color="#000000"><font size="-1">where <i>path</i>
+is the path name of the widget, <i>file</i> is the file name to use for
+capture, and <i>title</i> is a title for the printed page.</font></font></font>
+</p><p><font face="Verdana"><font size="-1">Email : <a href="mailto:customclients@videotron.ca">customclients@videotron.ca</a></font></font>
+
+</p></body></html>

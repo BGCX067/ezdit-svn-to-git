@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<Plugin name="svn" version="0.1" auth="Tai, Yuan-Liang">
+	<Namespace>:svnWrapper</Namespace>
+	<Init>::svnWrapper::init</Init>
+	<Configure></Configure>
+	<Description></Description>
+</Plugin>

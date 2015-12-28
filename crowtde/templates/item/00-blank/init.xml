@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<Template name="Empty file" image="item_templ_blank.png">
+	<Namespace>::itemTemplBlank</Namespace>
+	<Init>::itemTemplBlank::init</Init>
+	<Description>Create empty file.</Description>
+</Template>

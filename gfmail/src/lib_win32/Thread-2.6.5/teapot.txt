@@ -1,0 +1,12 @@
+Package Thread 2.6.5
+Meta as::author  {Zoran Vasiljevic}
+Meta as::origin  http://sourceforge.net/projects/tcl
+Meta category    Threading
+Meta description Thread provides commands for the creation and
+Meta description manipulation of script-level threads and communication
+Meta description between them
+Meta license     BSD
+Meta platform    win32-ix86
+Meta require     {Tcl 8.4}
+Meta subject     threads interprocess-communication IPC send
+Meta summary     Thread support at script level

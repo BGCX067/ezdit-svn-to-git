@@ -1,0 +1,60 @@
+2005-03-26 14:22  mikek
+
+	* generic/tkImgPNG.c: Add support for '-format "png -alpha
+	  <0.0..1.0>"' to modify the overall image transparency level upon
+	  image creation.
+
+2005-03-26 14:20  mikek
+
+	* generic/tkImgPNGInit.c: Tk 8.3 or later is required to support
+	  alpha.
+
+2005-03-19 21:16  mikek
+
+	* README, TODO: [no log message]
+
+2005-03-19 21:02  mikek
+
+	* configure, configure.in: Bump version to 0.6.
+
+2005-03-19 21:02  mikek
+
+	* generic/tkImgPNG.c: Add base64 decoding support using a lookup
+	  table rather than a monster switch statement (seems a little
+	  faster).
+
+2005-03-19 17:04  mikek
+
+	* generic/tkImgPNG.c: Check for needed remaining bytes before
+	  checking for EOF unnecessarily.
+
+2005-03-19 00:09  mikek
+
+	* generic/tkImgPNG.c: Optimized unfiltering of scan lines.
+
+2005-03-08 22:27  mikek
+
+	* Makefile.in: Disable install-doc target, since there are no docs.
+
+2005-03-08 21:38  mikek
+
+	* Makefile.in, README, TODO, configure, configure.in,
+	  license.terms, generic/tkImgPNG.c, generic/tkImgPNGInit.c,
+	  win/makefile.vc: Finished read support with interlacing and all,
+	  but no base64 support yet.  Bumped version to 0.5 for first
+	  release.
+
+2005-02-26 19:51  mikek
+
+	* Makefile.in, aclocal.m4, configure, configure.in,
+	  generic/tkImgPNG.c, generic/tkImgPNGInit.c, tclconfig/install-sh,
+	  tclconfig/tcl.m4, win/makefile.vc, win/nmakehlp.c, win/rules.vc:
+	  Initial revision
+
+2005-02-26 19:51  mikek
+
+	* Makefile.in, aclocal.m4, configure, configure.in,
+	  generic/tkImgPNG.c, generic/tkImgPNGInit.c, tclconfig/install-sh,
+	  tclconfig/tcl.m4, win/makefile.vc, win/nmakehlp.c, win/rules.vc:
+	  [no log message]
+

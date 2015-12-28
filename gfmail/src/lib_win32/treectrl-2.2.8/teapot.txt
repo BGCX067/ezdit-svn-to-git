@@ -1,0 +1,12 @@
+Package treectrl 2.2.8
+Meta as::author  {Tim Baker}
+Meta as::origin  http://sourceforge.net/projects/tktreectrl
+Meta category    Widget
+Meta description TkTreeCtrl is a flexible multi-column hierarachical
+Meta description listbox widget for the Tk toolkit.
+Meta license     BSD
+Meta platform    win32-ix86
+Meta require     {Tcl 8.4}
+Meta require     {Tk 8.4}
+Meta subject     Tree Matrix Table listbox multi-column hierarchical
+Meta summary     Multi-column hierarchical listbox widget

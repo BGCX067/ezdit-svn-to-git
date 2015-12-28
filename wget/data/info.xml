@@ -1,0 +1,6 @@
+<wget>
+	<info version='2.5' url='http://got7.org/blog/?page_id=9' />
+	<changes>
+		<item>修正封面快取錯誤的問題。(謝謝 阿鈞 回報這個問題)</item>
+	</changes>
+</wget>

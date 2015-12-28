@@ -1,0 +1,6 @@
+<ezdit>
+	<info version='0.5.1' url='http://code.google.com/p/ezdit/' />
+	<changes>
+		<item>Bugfix: auto command completion.</item>
+	</changes>
+</ezdit>

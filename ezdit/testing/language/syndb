@@ -1,0 +1,100 @@
+
+proc ::cc::syn_init {} {
+	variable SYNDB
+
+	array set SYNDB [list \
+		auto "DATASTRUCT" \
+		char "DATASTRUCT" \
+		const "DATASTRUCT" \
+		double "DATASTRUCT" \
+		enum "DATASTRUCT" \
+		extern "DATASTRUCT" \
+		float "DATASTRUCT" \
+		inline "DATASTRUCT" \
+		int "DATASTRUCT" \
+		long "DATASTRUCT" \
+		register "DATASTRUCT" \
+		short "DATASTRUCT" \
+		signed "DATASTRUCT" \
+		static "DATASTRUCT" \
+		struct "DATASTRUCT" \
+		typedef "DATASTRUCT" \
+		union "DATASTRUCT" \
+		volatile "DATASTRUCT" \
+		void "DATASTRUCT" \
+	]
+
+	array set SYNDB [list \
+		break "STATEMENT" \
+		case "STATEMENT" \
+		continue "STATEMENT" \
+		default "STATEMENT" \
+		do "STATEMENT" \
+		else "STATEMENT" \
+		for "STATEMENT" \
+		goto "STATEMENT" \
+		if "STATEMENT" \
+		return "STATEMENT" \
+		sizeof "STATEMENT" \
+		switch "STATEMENT" \
+		while "STATEMENT" \
+	]
+
+	array set SYNDB [list \
+		"#define" "PREDEFINE" \
+		"#include" "PREDEFINE" \
+		"#if" "PREDEFINE" \
+		"#ifndef" "PREDEFINE" \
+		"#else" "PREDEFINE" \
+		"#ifdef" "PREDEFINE" \
+		"#endif" "PREDEFINE" \
+	]
+	
+	set chars ""
+	foreach {key} [array names SYNDB] {
+		foreach ch [split $key ""] {
+			if {[string first $ch $chars] == -1} {append chars $ch}
+		}
+	}
+
+	set SYNDB(_CHARS_) $chars
+
+	set SYNDB(_COLORS_) [list \
+		PREDEFINE [list "#2772cd" ""] \
+		DATASTRUCT [list "#088D00" ""] \
+		STATEMENT [list "#AE2C62" ""] \
+		DIGIT [list "#FA8B07" ""] \
+		COMMENT [list "#3012F0" ""] \
+		STRING [list "#51728E" ""] \
+	]
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

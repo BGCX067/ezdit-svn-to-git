@@ -1,0 +1,3 @@
+#Choose Directory
+set ret [tk_chooseDirectory -title [::msgcat::mc "Choose Directory"] -mustexist 1]
+if {$ret eq "" || $ret eq "-1"} {return}
